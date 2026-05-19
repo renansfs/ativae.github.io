@@ -48,5 +48,32 @@
 
 @media (min-width: 768px) {
   body { cursor: none; }
-  a, button, input, textarea { cursor: none; }
+  a, button, input, textarea, select, label { cursor: none; }
+
+  .custom-cursor-ring {
+    transform: translate(-50%, -50%) scale(1);
+    background-color: transparent;
+    transition: transform 0.12s cubic-bezier(0.22, 1, 0.36, 1),
+      background-color 0.12s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .custom-cursor-ring[data-hover='true'] {
+    transform: translate(-50%, -50%) scale(1.35);
+    background-color: rgba(249, 115, 22, 0.15);
+  }
+
+  .custom-cursor-dot {
+    transition: transform 0.12s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .custom-cursor-ring[data-hover='true'] .custom-cursor-dot {
+    transform: scale(1.15);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .custom-cursor-ring,
+  .custom-cursor-dot {
+    transition: none;
+  }
 }

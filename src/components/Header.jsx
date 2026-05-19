@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Zap } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import Logo from './Logo';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -18,47 +19,30 @@ export default function Header() {
       }`}
     >
       <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
-        <div className="flex items-center z-50">
+        <div className="flex items-center z-50 shrink-0">
           <a href="#" className="group relative block">
             <div className="absolute -inset-2 bg-gradient-to-r from-orange-500 to-blue-500 rounded-lg opacity-0 group-hover:opacity-10 blur transition duration-500"></div>
-            <img
-              src="/3.png"
-              alt="Ativaê Studio Logo"
-              className="h-9 md:h-11 object-contain relative z-10 transition-transform duration-300 group-hover:scale-[1.03]"
-              onError={(e) => {
-                e.target.style.display = 'none';
-                e.target.nextSibling.style.display = 'flex';
-              }}
-            />
-            <div className="hidden items-center gap-2 font-bold text-xl tracking-tighter" style={{ display: 'none' }}>
-              <div className="relative flex items-center justify-center w-9 h-9 rounded-xl bg-gradient-to-br from-orange-500 to-blue-600">
-                <span className="text-white text-sm">A</span>
-                <Zap className="absolute -top-1 -right-1 w-3.5 h-3.5 text-orange-300 animate-pulse" />
-              </div>
-              <span>
-                ATIVA<span className="text-orange-500">Ê</span>
-              </span>
-            </div>
+            <Logo className="relative z-10 transition-transform duration-300 group-hover:scale-[1.03]" />
           </a>
         </div>
 
-        <nav className="hidden md:flex items-center gap-8 font-semibold text-sm text-slate-300">
-          <a href="#problema" className="hover:text-white transition-all">
+        <nav className="hidden md:flex flex-nowrap items-center gap-8 font-semibold text-sm text-slate-300">
+          <a href="#problema" className="hover:text-white transition-all whitespace-nowrap">
             O Desafio
           </a>
-          <a href="#solucao" className="hover:text-white transition-all">
+          <a href="#solucao" className="hover:text-white transition-all whitespace-nowrap">
             Nossa Solução
           </a>
-          <a href="#catalogo" className="hover:text-white transition-all">
+          <a href="#catalogo" className="hover:text-white transition-all whitespace-nowrap">
             Motores de Jogo
           </a>
-          <a href="#diferenciais" className="hover:text-white transition-all">
+          <a href="#diferenciais" className="hover:text-white transition-all whitespace-nowrap">
             Diferenciais
           </a>
-          <a href="#processo" className="hover:text-white transition-all">
+          <a href="#processo" className="hover:text-white transition-all whitespace-nowrap">
             Como Funciona
           </a>
-          <a href="#contato" className="relative group px-6 py-2.5 rounded-full overflow-hidden block">
+          <a href="#contato" className="relative group px-6 py-2.5 rounded-full overflow-hidden block whitespace-nowrap shrink-0">
             <div className="absolute inset-0 bg-gradient-to-r from-orange-500 via-red-500 to-blue-600 animate-gradient-x"></div>
             <div className="absolute inset-[2px] bg-slate-950 rounded-full transition-colors group-hover:bg-transparent"></div>
             <span className="relative z-10 text-white font-bold transition-colors">Solicitar Orçamento</span>
